@@ -1,6 +1,7 @@
 #include QMK_KEYBOARD_H
 #define CTL_ESC MT(MOD_LCTL, KC_ESC)
 #define SCTL_ESC MT(MOD_LCTL, S(KC_ESC))
+#define FN_SPC LT(FN, KC_SPC)
 
 enum layer_names {
 	BASE,
@@ -17,7 +18,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		    KC_TAB      , KC_SCLN, KC_COMM, KC_DOT , KC_P   , KC_Y   ,
 	          CTL_ESC   , KC_A   , KC_O   , KC_E   , KC_U   , KC_I   ,
 			     MO(SFT), KC_QUOT, KC_Q   , KC_J   , KC_K   , KC_X   ,
-		                  MO(FN) ,    KC_LALT,    KC_SPC ,    KC_LGUI,
+		                  MO(FN) ,    KC_LALT,    FN_SPC ,    KC_LGUI,
 		KC_DEL ,
 		// Right hand
 		KC_BSPC,
