@@ -7,7 +7,7 @@ enum layer_names {
 	BASE,
 	FN,
 	SFT,
-	NP,
+	//NP,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -66,22 +66,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	),
 	
 	// Numpad layer
-	[NP] = LAYOUT(
-		// Left hand
-		_______, _______, _______, _______, _______, _______, _______,
-		    _______     , _______, _______, _______, _______, _______,
-		      _______   , _______, _______, _______, _______, _______,
-		        _______ , _______, _______, _______, _______, _______,
-		                  _______,    _______,    _______,    _______,
-		_______,
-		// Right hand
-		_______   ,
-		_______   , KC_7   , KC_8   , KC_9   , _______, _______, _______,
-		S(KC_PGUP), KC_4   , KC_5   , KC_6   , _______, _______, _______,
-		S(KC_PGDN), KC_1   , KC_2   , KC_3   , _______, _______, _______,
-		_______   , KC_0   , KC_0   , KC_ENT , _______,     _______     ,
-		_______   ,   _______,   _______
-	),
+	//[NP] = LAYOUT(
+	//	// Left hand
+	//	_______, _______, _______, _______, _______, _______, _______,
+	//	    _______     , _______, _______, _______, _______, _______,
+	//	      _______   , _______, _______, _______, _______, _______,
+	//	        _______ , _______, _______, _______, _______, _______,
+	//	                  _______,    _______,    _______,    _______,
+	//	_______,
+	//	// Right hand
+	//	_______   ,
+	//	_______   , KC_7   , KC_8   , KC_9   , _______, _______, _______,
+	//	S(KC_PGUP), KC_4   , KC_5   , KC_6   , _______, _______, _______,
+	//	S(KC_PGDN), KC_1   , KC_2   , KC_3   , _______, _______, _______,
+	//	_______   , KC_0   , KC_0   , KC_ENT , _______,     _______     ,
+	//	_______   ,   _______,   _______
+	//),
 
 	// In case I need more layers
 	//[NAME] = LAYOUT(
@@ -102,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	//),
 };
 
-// Archane magic: turn on the numpad when fn and shift layers are both active
-layer_state_t layer_state_set_user(layer_state_t state) {
-	return update_tri_layer_state(state, FN, SFT, NP);
-}
+//// Arcane magic: turn on the numpad when fn and shift layers are both active
+//layer_state_t layer_state_set_user(layer_state_t state) {
+//	return update_tri_layer_state(state, FN, SFT, NP);
+//}
