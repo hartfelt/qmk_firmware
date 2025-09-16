@@ -58,10 +58,10 @@
 				{"label": "K", "matrix": [3, 4], "x": 4, "y": 3},
 				{"label": "X", "matrix": [4, 4], "x": 4, "y": 4},
 				
-				{"label": "Super", "matrix": [4, 0], "x": 0, "y": 4},
+				{"label": "Fn", "matrix": [4, 0], "x": 0, "y": 4},
 				{"label": "Alt", "matrix": [4, 1], "x": 1, "y": 4},
 				{"label": "Space", "matrix": [4, 2], "x": 2, "y": 4},
-				{"label": "Fn", "matrix": [4, 3], "x": 3, "y": 4},
+				{"label": "Super", "matrix": [4, 3], "x": 3, "y": 4},
 				
 				{"label": "Del", "matrix": [4, 5], "x": 5, "y": 4},
 				{"label": "Bksp", "matrix": [3, 6], "x": 6, "y": 3},

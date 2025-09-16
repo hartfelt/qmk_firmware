@@ -17,7 +17,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		    KC_TAB      , KC_SCLN, KC_COMM, KC_DOT , KC_P   , KC_Y   ,
 	          CTL_ESC   , KC_A   , KC_O   , KC_E   , KC_U   , KC_I   ,
 			     MO(SFT), KC_QUOT, KC_Q   , KC_J   , KC_K   , KC_X   ,
-		                  KC_LGUI,    KC_LALT,    KC_SPC ,    MO(FN) ,
+		                  MO(FN) ,    KC_LALT,    KC_SPC ,    KC_LGUI,
 		KC_DEL ,
 		// Right hand
 		KC_BSPC,
@@ -53,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		    S(KC_TAB)     , S(KC_SCLN), S(KC_COMM), S(KC_DOT), S(KC_P), S(KC_Y),
 		      SCTL_ESC    , S(KC_A)   , S(KC_O)   , S(KC_E)  , S(KC_U), S(KC_I),
 			     _______  , S(KC_QUOT), S(KC_Q)   , S(KC_J)  , S(KC_K), S(KC_X),
-		                    S(KC_LGUI), S(KC_LALT),  S(KC_SPC),   _______,
+		                    _______   , S(KC_LALT),  S(KC_SPC),    S(KC_LGUI)  ,
 		_______,
 		// Right hand
 		_______,
