@@ -2,11 +2,13 @@
 #define CTL_ESC MT(MOD_LCTL, KC_ESC)
 #define SCTL_ESC MT(MOD_LCTL, S(KC_ESC))
 #define FN_SPC LT(FN, KC_SPC)
+#define ___X___ KC_NO
 
 enum layer_names {
 	BASE,
 	FN,
 	SFT,
+	SFTFN,
 	//NP,
 };
 
@@ -32,18 +34,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	// Function-layer
 	[FN] = LAYOUT(
 		// Left hand
-		_______, _______, KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,
-		    _______     , _______, _______, _______, _______, _______,
-		      _______   , _______, _______, _______, _______, _______,
-		        _______ , _______, _______, _______, _______, _______,
+		___X___, ___X___, KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,
+		    ___X___     , ___X___, ___X___, ___X___, ___X___, ___X___,
+		      ___X___   , ___X___, ___X___, ___X___, ___X___, ___X___,
+		        _______ , ___X___, ___X___, ___X___, ___X___, ___X___,
 		                  _______,    _______,    _______,    _______,
 		_______,
 		// Right hand
 		_______,
 		KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_F11 , KC_F12 ,
-		KC_PGUP, KC_HOME, KC_UP  , KC_END,  _______, _______, _______,
-		KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______, _______,
-		_______, _______, _______, _______, _______,     _______     ,
+		KC_PGUP, KC_HOME, KC_UP  , KC_END,  ___X___, ___X___, ___X___,
+		KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, ___X___, ___X___, ___X___,
+		___X___, ___X___, ___X___, ___X___, ___X___,     _______     ,
 		MS_BTN1,   MS_BTN3,   MS_BTN2
 	),
 	
@@ -63,6 +65,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		S(KC_D), S(KC_H), S(KC_T), S(KC_N), S(KC_S), KC_UNDS, KC_PIPE,
 		S(KC_B), S(KC_M), S(KC_W), S(KC_V), S(KC_Z),     _______     ,
 		S(KC_ENT),  S(KC_SPC),   _______
+	),
+
+	// Shift+fn layer (needed to press, for example, shift+F6)
+	[SFTFN] = LAYOUT(
+		// Left hand
+		S(KC_ESC), KC_TILD, S(KC_F1)  , S(KC_F2)  , S(KC_F3) , S(KC_F4), S(KC_F5),
+		    S(KC_TAB)     , S(KC_SCLN), S(KC_COMM), S(KC_DOT), S(KC_P) , S(KC_Y) ,
+		      SCTL_ESC    , S(KC_A)   , S(KC_O)   , S(KC_E)  , S(KC_U) , S(KC_I) ,
+			     _______  , S(KC_QUOT), S(KC_Q)   , S(KC_J)  , S(KC_K) , S(KC_X) ,
+		                    _______   , S(KC_LALT),  S(KC_SPC),    S(KC_LGUI)    ,
+		_______,
+		// Right hand
+		_______,
+		S(KC_F6)  , S(KC_F7)  , S(KC_F8)  , S(KC_F9)  , S(KC_F10), S(KC_F11), S(KC_F12),
+		S(KC_PGUP), S(KC_HOME), S(KC_UP)  , S(KC_END) , ___X___  , ___X___  , ___X___  ,
+		S(KC_PGDN), S(KC_LEFT), S(KC_DOWN), S(KC_RGHT), ___X___  , ___X___  , ___X___  ,
+		___X___   , ___X___   , ___X___   , ___X___   , ___X___  ,     _______         ,
+		_______   ,   _______   ,   _______
+
 	),
 	
 	// Numpad layer
@@ -102,7 +123,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	//),
 };
 
-//// Arcane magic: turn on the numpad when fn and shift layers are both active
-//layer_state_t layer_state_set_user(layer_state_t state) {
-//	return update_tri_layer_state(state, FN, SFT, NP);
-//}
+// Arcane magic: Turn on the shift+fn-layer when shift and fn are both active.
+layer_state_t layer_state_set_user(layer_state_t state) {
+	return update_tri_layer_state(state, FN, SFT, SFTFN);
+}
