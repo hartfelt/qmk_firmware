@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		// Left hand
 		___X___, ___X___, KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,
 		    ___X___     , ___X___, ___X___, ___X___, ___X___, ___X___,
-		      ___X___   , ___X___, ___X___, ___X___, ___X___, ___X___,
+		      _______   , ___X___, ___X___, ___X___, ___X___, ___X___,
 		        _______ , ___X___, ___X___, ___X___, ___X___, ___X___,
 		                  _______,    _______,    _______,    _______,
 		_______,
@@ -70,11 +70,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	// Shift+fn layer (needed to press, for example, shift+F6)
 	[SFTFN] = LAYOUT(
 		// Left hand
-		S(KC_ESC), KC_TILD, S(KC_F1)  , S(KC_F2)  , S(KC_F3) , S(KC_F4), S(KC_F5),
-		    S(KC_TAB)     , S(KC_SCLN), S(KC_COMM), S(KC_DOT), S(KC_P) , S(KC_Y) ,
-		      SCTL_ESC    , S(KC_A)   , S(KC_O)   , S(KC_E)  , S(KC_U) , S(KC_I) ,
-			     _______  , S(KC_QUOT), S(KC_Q)   , S(KC_J)  , S(KC_K) , S(KC_X) ,
-		                    _______   , S(KC_LALT),  S(KC_SPC),    S(KC_LGUI)    ,
+		S(KC_ESC), KC_TILD, S(KC_F1), S(KC_F2)  , S(KC_F3), S(KC_F4), S(KC_F5),
+		    S(KC_TAB)     , ___X___ , ___X___   , ___X___ , ___X___ , ___X___ ,
+		      SCTL_ESC    , ___X___ , ___X___   , ___X___ , ___X___ , ___X___ ,
+			     _______  , ___X___ , ___X___   , ___X___ , ___X___ , ___X___ ,
+		                    _______ , S(KC_LALT),  S(KC_SPC),   S(KC_LGUI)    ,
 		_______,
 		// Right hand
 		_______,
